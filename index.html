@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jacob Albano</title>
+  <title>Kokomo &amp; Co</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #f7f4ef;
-      --ink: #1c1a17;
-      --muted: #9a9488;
-      --border: #e2ddd5;
-      --hover: #f0ece4;
+      --ink: #f0efed;
+      --muted: #c2c8c6;
+      --border: rgba(255,255,255,0.13);
+      --hover: rgba(255,255,255,0.13);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--cream);
+      background-color: #7d8783;
+      background-image: radial-gradient(ellipse at 20% 50%, rgba(95,105,103,0.7) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(85,95,93,0.5) 0%, transparent 50%);
       color: var(--ink);
       font-family: 'Jost', sans-serif;
       font-weight: 300;
@@ -52,14 +52,22 @@
       animation: fadeUp 0.7s ease 0.05s both;
     }
 
+    /* ── Photo band ── */
+    .photo-band {
+      width: 100vw;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      padding: 28px 0;
+      margin: 32px 0 44px;
+    }
+
     /* ── Photo ── */
     .photo-ring {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       overflow: hidden;
-      border: 1px solid var(--border);
-      margin-bottom: 22px;
       animation: fadeUp 0.7s ease 0.1s both;
       flex-shrink: 0;
     }
@@ -69,29 +77,6 @@
       height: 100%;
       object-fit: cover;
       object-position: center top;
-    }
-
-    /* ── Name ── */
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: 38px;
-      letter-spacing: 0.04em;
-      color: var(--ink);
-      text-align: center;
-      line-height: 1.1;
-      margin-bottom: 10px;
-      animation: fadeUp 0.7s ease 0.15s both;
-    }
-
-    .tagline {
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-align: center;
-      margin-bottom: 48px;
-      animation: fadeUp 0.7s ease 0.2s both;
     }
 
     /* ── Rule ── */
@@ -129,9 +114,9 @@
       align-items: center;
       justify-content: space-between;
       padding: 16px 20px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255,255,255,0.13);
       border-radius: 8px;
-      background: #fff;
+      background: rgba(255,255,255,0.08);
       text-decoration: none;
       color: var(--ink);
       transition: background 0.15s, border-color 0.15s, transform 0.15s;
@@ -140,7 +125,7 @@
 
     .company:hover {
       background: var(--hover);
-      border-color: #ccc7bc;
+      border-color: rgba(255,255,255,0.25);
       transform: translateY(-1px);
     }
 
@@ -150,8 +135,8 @@
     }
 
     .company.no-link:hover {
-      background: #fff;
-      border-color: var(--border);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.13);
       transform: none;
     }
 
@@ -223,7 +208,6 @@
     }
 
     @media (max-width: 420px) {
-      h1 { font-size: 30px; }
       .logo { width: 180px; }
     }
   </style>
@@ -235,13 +219,11 @@
     <img class="logo" src="public/images/KokomoandCoLogo.png" alt="Kokomo & Co" />
 
     <!-- Photo -->
-    <div class="photo-ring">
-      <img src="public/images/face.jpeg" alt="Jacob Albano" />
+    <div class="photo-band">
+      <div class="photo-ring">
+        <img src="public/images/face.jpeg" alt="Jacob Albano" />
+      </div>
     </div>
-
-    <!-- Name + tagline -->
-    <h1>Jacob Albano</h1>
-    <p class="tagline">Founder &amp; Creative</p>
 
     <hr />
 
