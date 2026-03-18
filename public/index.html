@@ -18,8 +18,8 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: #EFF6E5;
-      background-image: radial-gradient(ellipse at 20% 50%, rgba(220,230,200,0.5) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(210,220,190,0.4) 0%, transparent 50%);
+      background-color: #D3D3D3;
+      background-image: radial-gradient(ellipse at 20% 50%, rgba(180,180,180,0.4) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(160,160,160,0.3) 0%, transparent 50%);
       color: var(--ink);
       font-family: 'Jost', sans-serif;
       font-weight: 300;
@@ -54,11 +54,16 @@
 
     /* ── Photo band ── */
     .photo-band {
-      display: inline-flex;
-      padding: 10px;
-      border-radius: 50%;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
       background: #000;
-      margin: 28px auto 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 32px 0;
+      margin-top: 28px;
+      margin-bottom: 44px;
+      border-radius: 0;
     }
 
     /* ── Photo ── */
@@ -99,10 +104,10 @@
     }
 
     /* ── Company cards ── */
-    .companies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%; margin-bottom: 52px; }
-    .company { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 8px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; background: rgba(0,0,0,0.05); text-decoration: none; color: inherit; transition: background 0.15s, transform 0.15s; }
+    .companies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; width: 100vw; margin-left: calc(-50vw + 50%); margin-bottom: 52px; }
+    .company { display: flex; align-items: center; justify-content: center; padding: 36px 16px; background: transparent; border: none; border-right: 1px solid rgba(0,0,0,0.1); text-decoration: none; color: inherit; transition: background 0.15s, transform 0.15s; }
     .company:hover { background: rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.2); transform: translateY(-1px); }
-    .company-logo { height: 52px; width: auto; max-width: 100%; object-fit: contain; }
+    .company-logo { height: 80px; width: auto; max-width: 90%; object-fit: contain; }
 
     /* ── Contact ── */
     .contact {
