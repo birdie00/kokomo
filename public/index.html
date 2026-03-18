@@ -4,156 +4,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kokomo &amp; Co</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink: #1a1a1a;
-      --muted: #666;
-      --border: rgba(0,0,0,0.1);
-      --card: rgba(0,0,0,0.05);
-    }
-
-    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: #e8e8e8;
-      color: var(--ink);
+      margin: 0;
+      padding: 0;
+      background: #e8e8e8;
       font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      overflow-x: hidden;
+      text-align: center;
     }
 
-    /* fade-in on load */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .page {
-      width: 100%;
-      max-width: 100%;
-      padding: 48px 0 80px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: fadeUp 0.7s ease both;
-    }
-
-    /* ── Logo ── */
     .logo {
-      width: 220px;
-      margin-bottom: 40px;
-      animation: fadeUp 0.7s ease 0.05s both;
+      display: block;
+      margin: 48px auto 32px;
+      width: 200px;
     }
 
-    /* ── Photo band ── */
     .photo-band {
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
+      width: 100%;
       background: #000;
+      padding: 40px 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 40px 0;
     }
 
-    /* ── Photo ── */
-    .photo-ring {
+    .photo-band img {
       width: 390px;
       height: 390px;
       border-radius: 50%;
       overflow: hidden;
-      animation: fadeUp 0.7s ease 0.1s both;
-      flex-shrink: 0;
-    }
-
-    .photo-ring img {
-      width: 100%;
-      height: 100%;
       object-fit: cover;
       object-position: center top;
     }
 
-    /* ── Company cards ── */
-    .companies { display: grid; grid-template-columns: repeat(3, 1fr); width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-bottom: 52px; border-top: 1px solid rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08); }
-    .company { display: flex; align-items: center; justify-content: center; padding: 36px 16px; background: transparent; border: none; border-right: 1px solid rgba(0,0,0,0.1); text-decoration: none; color: inherit; transition: background 0.15s, transform 0.15s; }
-    .company:hover { background: rgba(0,0,0,0.08); transform: translateY(-1px); }
-    .company-logo { height: 90px; max-width: 85%; object-fit: contain; }
+    .companies {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      margin: 48px 0;
+    }
 
-    /* ── Contact ── */
-    .contact {
+    .company {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 7px;
-      animation: fadeUp 0.7s ease 0.35s both;
-    }
-
-    .contact-email {
-      font-family: 'Jost', sans-serif;
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--ink);
+      justify-content: center;
+      padding: 32px 16px;
+      border-right: 1px solid rgba(0,0,0,0.1);
+      border-top: 1px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
       text-decoration: none;
-      border-bottom: 1px solid rgba(0,0,0,0.25);
-      padding-bottom: 2px;
-      transition: border-color 0.15s, color 0.15s;
-      letter-spacing: 0.02em;
     }
 
-    .contact-email:hover {
-      border-color: rgba(0,0,0,0.6);
+    .company img {
+      max-width: 85%;
+      height: 80px;
+      object-fit: contain;
     }
 
-    @media (max-width: 420px) {
-      .logo { width: 180px; }
+    .contact {
+      text-align: center;
+      padding: 48px 0 80px;
+      font-size: 15px;
+      color: #1a1a1a;
+    }
+
+    .contact a {
+      color: #1a1a1a;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
-  <div class="page">
 
-    <!-- Logo -->
-    <img class="logo" src="images/KokomoandCoLogo.png" alt="Kokomo & Co" />
+  <img class="logo" src="images/KokomoandCoLogo.png" alt="Kokomo & Co" />
 
-    <!-- Photo -->
-    <div class="photo-band">
-      <div class="photo-ring">
-        <img src="images/face.jpeg" alt="Jacob Albano" />
-      </div>
-    </div>
-
-    <!-- Companies -->
-    <div class="companies">
-
-      <a class="company" href="https://pipcasso.com" target="_blank" rel="noopener">
-        <img class="company-logo" src="images/PipcassoLogo.png" alt="Pipcasso" />
-      </a>
-
-      <a class="company" href="#">
-        <img class="company-logo" src="images/GelatoLogo.png" alt="Gelato" />
-      </a>
-
-      <a class="company" href="#">
-        <img class="company-logo" src="images/SeondDueLogo.png" alt="Second Due" />
-      </a>
-
-    </div>
-
-    <!-- Contact -->
-    <div class="contact">
-      <a class="contact-email" href="mailto:jacob@kokomoandco.com">jacob@kokomoandco.com</a>
-    </div>
-
+  <div class="photo-band">
+    <img src="images/face.jpeg" alt="" />
   </div>
+
+  <div class="companies">
+    <a class="company" href="https://pipcasso.com" target="_blank" rel="noopener">
+      <img src="images/PipcassoLogo.png" alt="Pipcasso" />
+    </a>
+    <a class="company" href="#">
+      <img src="images/GelatoLogo.png" alt="Gelato" />
+    </a>
+    <a class="company" href="#">
+      <img src="images/SeondDueLogo.png" alt="Second Due" />
+    </a>
+  </div>
+
+  <div class="contact">
+    <a href="mailto:jacob@kokomoandco.com">jacob@kokomoandco.com</a>
+  </div>
+
 </body>
 </html>
