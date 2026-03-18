@@ -18,8 +18,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: #D3D3D3;
-      background-image: radial-gradient(ellipse at 20% 50%, rgba(180,180,180,0.4) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(160,160,160,0.3) 0%, transparent 50%);
+      background-color: #e8e8e8;
       color: var(--ink);
       font-family: 'Jost', sans-serif;
       font-weight: 300;
@@ -37,8 +36,8 @@
 
     .page {
       width: 100%;
-      max-width: 520px;
-      padding: 64px 28px 80px;
+      max-width: 100%;
+      padding: 48px 0 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -83,31 +82,11 @@
       object-position: center top;
     }
 
-    /* ── Rule ── */
-    hr {
-      width: 40px;
-      border: none;
-      border-top: 1px solid rgba(0,0,0,0.15);
-      margin-bottom: 40px;
-      animation: fadeUp 0.7s ease 0.22s both;
-    }
-
-    /* ── Section label ── */
-    .section-label {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 16px;
-      text-align: center;
-      animation: fadeUp 0.7s ease 0.25s both;
-    }
-
     /* ── Company cards ── */
-    .companies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; width: 100vw; margin-left: calc(-50vw + 50%); margin-bottom: 52px; }
+    .companies { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; width: 100vw; margin-left: calc(-50vw + 50%); margin-bottom: 52px; border-top: 1px solid rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08); }
     .company { display: flex; align-items: center; justify-content: center; padding: 36px 16px; background: transparent; border: none; border-right: 1px solid rgba(0,0,0,0.1); text-decoration: none; color: inherit; transition: background 0.15s, transform 0.15s; }
-    .company:hover { background: rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.2); transform: translateY(-1px); }
-    .company-logo { height: 80px; width: auto; max-width: 90%; object-fit: contain; }
+    .company:hover { background: rgba(0,0,0,0.08); transform: translateY(-1px); }
+    .company-logo { height: 100px; width: auto; max-width: 100%; object-fit: contain; }
 
     /* ── Contact ── */
     .contact {
@@ -116,13 +95,6 @@
       align-items: center;
       gap: 7px;
       animation: fadeUp 0.7s ease 0.35s both;
-    }
-
-    .contact-label {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
     }
 
     .contact-email {
@@ -159,11 +131,7 @@
       </div>
     </div>
 
-    <hr />
-
     <!-- Companies -->
-    <p class="section-label">Projects &amp; Companies</p>
-
     <div class="companies">
 
       <a class="company" href="https://pipcasso.com" target="_blank" rel="noopener">
@@ -182,7 +150,6 @@
 
     <!-- Contact -->
     <div class="contact">
-      <span class="contact-label">Contact</span>
       <a class="contact-email" href="mailto:jacob@kokomoandco.com">jacob@kokomoandco.com</a>
     </div>
 
